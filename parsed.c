@@ -4,8 +4,8 @@
 void parseSpace(char* str, char** parsed)// parsed is the address of string 
 {
     int i;
-    /*strsep() is a predefined function in the library string.h. It seperates the string 
-	into pieces marked by the given delimiter. It returns NULL when string is empty*/
+    /*  strsep() is a predefined function in the library string.h. It seperates the string 
+	into pieces marked by the given delimiter. It returns NULL when string is empty      */
    
     for (i = 0; i < MAXLIST; i++)      
 	{
