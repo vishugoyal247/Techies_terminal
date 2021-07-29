@@ -281,7 +281,7 @@ void openHelp()
         "\n\033[107m\033[30m**\033[106m\033[30m                                                             \033[107m**\033[0m"
         "\n\033[107m\033[30m**\033[106m\033[30m          !!! Use the shell at your own risk !!!             \033[107m**\033[0m"
         "\n\033[107m\033[30m**\033[106m\033[30m                                                             \033[107m**\033[0m"
-        "\n\033[107m\033[30m**\033[106m\033[30m        \033[5mList of self build and supported Commands:\033[0m\033[106m           \033[107m**\033[0m"
+        "\n\033[107m\033[30m**\033[106m\033[30m        \033[5mList of self build and supported Commands:\033[0m\033[106m           \033[107m\033[30m**\033[0m"
         "\n\033[107m\033[30m**\033[106m\033[30m        ==========================================           \033[107m**\033[0m"
         "\n\033[107m\033[30m**\033[106m\033[30m                >hello                                       \033[107m**\033[0m"
         "\n\033[107m\033[30m**\033[106m\033[30m                >intro                                       \033[107m**\033[0m"
@@ -302,7 +302,7 @@ void openHelp()
 int ownCmdHandler(char** parsed)
 {	
 	// total no of commands is 5 
-	int NoOfCmds = 5, i, switchOwnArg = 0;
+	int NoOfCmds = 6, i, switchOwnArg = 0;
 	char* ListOfCmds[NoOfCmds];
 	char* username;
 	// List of commands
@@ -311,6 +311,7 @@ int ownCmdHandler(char** parsed)
 	ListOfCmds[2] = "help";
 	ListOfCmds[3] = "exit";
 	ListOfCmds[4] = "manual";
+        ListOfCmds[5] = "cd";
 
 	
 	for (i = 0; i < NoOfCmds; i++) {
@@ -345,6 +346,9 @@ int ownCmdHandler(char** parsed)
 		exit(0);
 	case 5:
 		manual();
+		return 1;
+	case 6:
+		chdir(parsed[1]);
 		return 1;
 	default:
 		break;
